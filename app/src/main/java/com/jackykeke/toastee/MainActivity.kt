@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun toast(view: View) {
+    fun error(view: View) {
         Toastee.getInstance()
             .icon(R.drawable.ic_clear_white_24dp)
             .common(R.color.errorColor, R.color.defaultTextColor)
