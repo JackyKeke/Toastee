@@ -8,15 +8,13 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="toast"
+        android:onClick="error"
         android:padding="20dp"
         android:text="error" />
 
     <Button
-        android:id="@+id/Button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -25,7 +23,6 @@
         android:text="success" />
 
     <Button
-        android:id="@+id/Button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -35,7 +32,6 @@
 
 
     <Button
-        android:id="@+id/Button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -44,7 +40,6 @@
         android:text="withoutIcon" />
 
     <Button
-        android:id="@+id/Button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

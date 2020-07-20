@@ -24,11 +24,11 @@ public class Toastee {
     private static Toast nowToast = null;
 
     private static final Typeface LOADED_TOAST_TYPEFACE = Typeface.create("sans-serif-condensed", Typeface.NORMAL);
-    private static Typeface currentTypeface = LOADED_TOAST_TYPEFACE;
-    private static int textSize = 16; // in SP
+    private Typeface currentTypeface = LOADED_TOAST_TYPEFACE;
+    private int textSize = 16; // in SP
 
-    private static boolean tintIcon = true;
-    private static boolean allowQueue = true;
+    private boolean tintIcon = true;
+    private boolean allowQueue = true;
     public static final int LENGTH_SHORT = Toast.LENGTH_SHORT;
     public static final int LENGTH_LONG = Toast.LENGTH_LONG;
 
@@ -95,6 +95,16 @@ public class Toastee {
     public Toastee common(@ColorRes int tintColor, @ColorRes int textColor) {
         this.tintColor = tintColor;
         this.textColor = textColor;
+        return this;
+    }
+
+    public Toastee textSize(int textSize) {
+        this.textSize = textSize;
+        return this;
+    }
+
+    public Toastee currentTypeface(Typeface currentTypeface) {
+        this.currentTypeface = currentTypeface;
         return this;
     }
 
