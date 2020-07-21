@@ -11,8 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
     }
 
 
@@ -58,7 +56,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun custom(view: View) {
-        val toastLayout = (getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(R.layout.toast_custom_layout, null)
+        val toastLayout = (getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
+            .inflate(R.layout.toast_custom_layout, null)
 
         Toastee.getInstance()
             .layout(toastLayout)
