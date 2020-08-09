@@ -49,6 +49,9 @@ public class Toastee {
 
     private View layout;
 
+    private int xOffset = 0;
+    private int yOffset = 0;
+
     private Toastee() {
         // avoiding instantiation
 
@@ -76,8 +79,11 @@ public class Toastee {
         return this;
     }
 
-    public Toastee gravity(int gravity) {
+    public Toastee gravity(int gravity,int xOffset,int yOffset) {
         this.gravity = gravity;
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+
         return this;
     }
 
@@ -111,7 +117,7 @@ public class Toastee {
     public void build(Context context) {
 
         nowToast = Toast.makeText(context, "", duration);
-        nowToast.setGravity(gravity, 0, 0);
+        nowToast.setGravity(gravity, xOffset, yOffset);
 
         final View toastLayout = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
                 .inflate(R.layout.toast_layout, null);
@@ -147,6 +153,7 @@ public class Toastee {
             lastToast = nowToast;
         }
         nowToast.show();
+        recovery();
     }
 
     public Toastee layout(View view) {
@@ -157,10 +164,21 @@ public class Toastee {
 
     public void custom(Context context) {
         nowToast = Toast.makeText(context, "", duration);
-        nowToast.setGravity(gravity, 0, 0);
+        nowToast.setGravity(gravity, xOffset, yOffset);
         nowToast.setView(layout);
         nowToast.show();
+        recovery();
     }
 
+
+    private void recovery() {
+        xOffset = 0;
+        yOffset = 0;
+        duration = LENGTH_SHORT;
+        gravity = Gravity.CENTER;
+        withIcon = true;
+        tintColor = R.color.normalColor;
+        textColor = R.color.defaultTextColor;
+    }
 
 }
