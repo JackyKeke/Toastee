@@ -10,8 +10,11 @@
 ### 位置
 
 ```java
- public Toastee gravity(int gravity)
+ public Toastee gravity(int gravity,int xOffset,int yOffset)
 ```
+
+
+
 
 ### 是否需要图标
 
