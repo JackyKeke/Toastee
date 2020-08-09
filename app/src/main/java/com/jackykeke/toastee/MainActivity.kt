@@ -56,11 +56,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun custom(view: View) {
+
         val toastLayout =
             (getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
                 R.layout.toast_custom_layout,
                 null
             )
+
         Toastee.getInstance()
             .layout(toastLayout)
             .gravity(Gravity.BOTTOM, 0, 0)
